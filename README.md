@@ -11,6 +11,11 @@
 | `iron-mind` | Kernel / Systems / Rules / 服务端 / 前端 | 任何"1938 年""日本""中国"的硬编码 |
 | `nanxun-1938`（本仓库） | 地图、序列、将领、规则、结局、战役文档 | 任何引擎逻辑 |
 
+> **想自己做一个模块？** 看引擎仓库的 [`content/README.md`](../iron-mind/content/README.md)，
+> 那是模块格式的完整契约（字段表、结局/规则写法、校验码、发布清单）。
+> 起步最快的办法：`node ../iron-mind/tools/module-init.js --id org.you.mymod --name "我的战役"`，
+> 它会生成一个能直接加载的空模块，改 map.json / oob.json 里的占位数据就行。
+
 引擎不认识"国军""日军"，它只认识 side、unit、province 与内容声明的规则。
 所以换一仗不用改引擎；改引擎也不会动这一仗。
 
