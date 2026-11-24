@@ -1,0 +1,5 @@
+# 运行产物
+/logs/
+/saves/
+Thumbs.db
+.DS_Store

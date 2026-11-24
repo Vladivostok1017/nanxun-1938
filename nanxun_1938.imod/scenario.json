@@ -1,0 +1,158 @@
+{
+  "id": "scen.nanxun",
+  "name": "南浔线作战",
+  "start_date": "1938-07-26",
+  "days": 77,
+  "seed": 20250924,
+  "comms": {
+    "preset": "wire_telegraph",
+    "air_delay": 1,
+    "local_delay": 0,
+    "adjacent_delay": 1
+  },
+  "rules": [
+    {
+      "phase": "post_movement",
+      "id": "mountain_attrition",
+      "then": [
+        {
+          "modify_strength_pct": -0.004
+        },
+        {
+          "log": "山地行军，部队出现非战斗减员"
+        }
+      ],
+      "when": {
+        "terrain": "mountain"
+      },
+      "priority": 0
+    },
+    {
+      "phase": "post_combat",
+      "id": "wanjialing_morale_boost",
+      "then": [
+        {
+          "modify_morale": 0.01
+        }
+      ],
+      "when": {
+        "province_owner": "cn"
+      },
+      "priority": 0
+    }
+  ],
+  "endings": [
+    {
+      "id": "E5",
+      "name": "两败俱伤",
+      "priority": 10,
+      "text": "南浔线守住了，代价是两个军被打残。日军也没讨到便宜——它想截断浙赣路，没做到。这种仗谁都不愿打第二次。",
+      "require": [
+        {
+          "metric": "day",
+          "cmp": "ge",
+          "value": 77
+        },
+        {
+          "metric": "provinces",
+          "side": "cn",
+          "cmp": "ge",
+          "value": 45
+        },
+        {
+          "metric": "losses",
+          "side": "cn",
+          "cmp": "ge",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "name": "以空间换时间",
+      "priority": 20,
+      "text": "放弃了几座城，主力还在。铁路还在手里，第九战区的架子还在，日军拿到的是空城。",
+      "require": [
+        {
+          "metric": "day",
+          "cmp": "ge",
+          "value": 77
+        },
+        {
+          "metric": "provinces",
+          "side": "cn",
+          "cmp": "ge",
+          "value": 40
+        },
+        {
+          "metric": "units_alive",
+          "side": "cn",
+          "cmp": "ge",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "name": "苦撑",
+      "priority": 30,
+      "text": "付出极大代价守住了主要防线。日军没能沿南浔路贯通浙赣线，但第九战区的元气伤得很重。",
+      "require": [
+        {
+          "metric": "day",
+          "cmp": "ge",
+          "value": 77
+        },
+        {
+          "metric": "provinces",
+          "side": "cn",
+          "cmp": "ge",
+          "value": 35
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "name": "僵持",
+      "priority": 40,
+      "text": "双方都打不动了。战线停在赣北的丘陵之间，谁也无力再推进一步。",
+      "require": [
+        {
+          "metric": "day",
+          "cmp": "ge",
+          "value": 77
+        }
+      ]
+    },
+    {
+      "id": "E7",
+      "name": "速溃",
+      "priority": 50,
+      "at_end_only": false,
+      "text": "防线过早崩了，主力没来得及展开就散了。南浔线全线动摇。",
+      "require": [
+        {
+          "metric": "provinces",
+          "side": "cn",
+          "cmp": "le",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "id": "E6",
+      "name": "中枢崩解",
+      "priority": 60,
+      "at_end_only": false,
+      "text": "部队成建制地被打掉了。番号还在，兵没了；命令下下去也没人执行。",
+      "require": [
+        {
+          "metric": "units_alive",
+          "side": "cn",
+          "cmp": "le",
+          "value": 4
+        }
+      ]
+    }
+  ]
+}
