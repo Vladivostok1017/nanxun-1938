@@ -38,16 +38,29 @@
 
 ## 怎么跑
 
+### 只想玩
+
+去 [Releases](https://github.com/Vladivostok1017/nanxun-1938/releases) 下 `nanxun_1938-v0.1.0.imod`，
+在游戏里「新的战役 → 导入 .imod」选它就行。（`.imod` 是一个 zip：里面是本目录那五个 json。）
+
+### 想改它 / 调试它
+
 ```powershell
 cd ..\iron-mind
 $env:IRONMIND_MODULES = "F:\dsh\nanxun-1938"   # 告诉引擎去这个目录找模块
 cargo run -p sim-server                         # 默认就会捡到本模块
-# 或者显式指定：
+# 或者显式指定（目录、压缩包都吃）：
 cargo run -p sim-server -- --module ../nanxun-1938/nanxun_1938.imod
 ```
 
-浏览器打开 http://127.0.0.1:8899/ 。模型密钥放在铁引擎那边的 `.env`：
+浏览器打开 http://127.0.0.1:8899/ 。模型密钥放在引擎那边的 `.env`：
 `IRONMIND_API_KEY=...`、`IRONMIND_MODEL=deepseek-chat`。
+
+改完存盘就重载的开发循环在 [iron-mind-sdk](https://github.com/Vladivostok1017/iron-mind-sdk)：
+`node imdev.mjs --module ..\nanxun-1938\nanxun_1938.imod`。
+
+> **源文件是目录，不是压缩包。** 本仓库里 `nanxun_1938.imod/` 是文件夹——那样才能 diff、
+> 才能热重载；`.imod` 压缩包只在发布时由引擎仓库的 `tools/package.ps1` 打出来。
 
 ## 目录
 
