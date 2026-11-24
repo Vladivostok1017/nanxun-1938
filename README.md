@@ -9,12 +9,21 @@
 | 仓库 | 负责 | 不该出现的东西 |
 |---|---|---|
 | `iron-mind` | Kernel / Systems / Rules / 服务端 / 前端 | 任何"1938 年""日本""中国"的硬编码 |
+| `iron-mind-sdk` | 模块脚手架、开发循环、将来的可视化编辑器 | 任何引擎逻辑 |
 | `nanxun-1938`（本仓库） | 地图、序列、将领、规则、结局、战役文档 | 任何引擎逻辑 |
 
 > **想自己做一个模块？** 看引擎仓库的 [`content/README.md`](../iron-mind/content/README.md)，
 > 那是模块格式的完整契约（字段表、结局/规则写法、校验码、发布清单）。
-> 起步最快的办法：`node ../iron-mind/tools/module-init.js --id org.you.mymod --name "我的战役"`，
-> 它会生成一个能直接加载的空模块，改 map.json / oob.json 里的占位数据就行。
+> 起步最快的办法：
+>
+> ```powershell
+> cd ..\iron-mind-sdk
+> node tools\module-init.js --id org.you.mymod --name "我的战役"   # 生成空模块
+> node imdev.mjs --module ..\nanxun-1938\nanxun_1938.imod          # 改完存盘就重载
+> ```
+>
+> 它会生成一个能直接加载、校验零警告的空模块，改 map.json / oob.json 里的占位数据就行。
+> 开发工具在 SDK 仓库——引擎出货的二进制不带开发行为，作者工具也不该混进玩家安装包。
 
 引擎不认识"国军""日军"，它只认识 side、unit、province 与内容声明的规则。
 所以换一仗不用改引擎；改引擎也不会动这一仗。
