@@ -5,7 +5,7 @@
   "days": 77,
   "seed": 20250924,
   "comms": {
-    "preset": "wire_telegraph",
+    "preset": "radio",
     "air_delay": 1,
     "local_delay": 0,
     "adjacent_delay": 1
