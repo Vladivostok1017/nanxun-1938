@@ -1,18 +1,24 @@
 # 南浔线 1938 · 一个 Iron Mind 战役模块
 
-这是一个**内容模块**，不是引擎。引擎在 [`../iron-mind`](../iron-mind)，
+> 1938 年 7–10 月，长江南岸。日军要打通南浔铁路，国军要在德安、万家岭一线把它拖住。
+> 你是第九战区的长官：只能发电报，具体怎么打是下面那些军长师长的事。
+
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![engine](https://img.shields.io/badge/engine-%E2%89%A5%200.12-2f6f4f)
+
+这是一个**内容模块**，不是引擎。引擎在 [iron-mind](https://github.com/Vladivostok1017/iron-mind)，
 它只提供框架（tick、实体、补给、战斗、指挥链、LLM 将领），
 这一仗"在哪打、谁打谁、想要什么"全部在这里。
 
-两个仓库分开是有意的：
+三个仓库分开是有意的：
 
 | 仓库 | 负责 | 不该出现的东西 |
 |---|---|---|
-| `iron-mind` | Kernel / Systems / Rules / 服务端 / 前端 | 任何"1938 年""日本""中国"的硬编码 |
-| `iron-mind-sdk` | 模块脚手架、开发循环、将来的可视化编辑器 | 任何引擎逻辑 |
-| `nanxun-1938`（本仓库） | 地图、序列、将领、规则、结局、战役文档 | 任何引擎逻辑 |
+| [iron-mind](https://github.com/Vladivostok1017/iron-mind) | Kernel / Systems / Rules / 服务端 / 前端 | 任何"1938 年""日本""中国"的硬编码 |
+| [iron-mind-sdk](https://github.com/Vladivostok1017/iron-mind-sdk) | 模块脚手架、开发循环、将来的可视化编辑器 | 任何引擎逻辑 |
+| **nanxun-1938**（本仓库） | 地图、序列、将领、规则、结局、战役文档 | 任何引擎逻辑 |
 
-> **想自己做一个模块？** 看引擎仓库的 [`content/README.md`](../iron-mind/content/README.md)，
+> **想自己做一个模块？** 看引擎仓库的 [`content/README.md`](https://github.com/Vladivostok1017/iron-mind/blob/main/content/README.md)，
 > 那是模块格式的完整契约（字段表、结局/规则写法、校验码、发布清单）。
 > 起步最快的办法：
 >
