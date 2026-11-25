@@ -9,7 +9,7 @@
       "strength": 24,
       "position": 45,
       "estimated": true,
-      "effectiveness": 1.7,
+      "effectiveness": 1.53,
       "supply_reach": 0.5,
       "commander": {
         "name": "稻叶四郎",
@@ -31,7 +31,7 @@
       "strength": 20,
       "position": 0,
       "estimated": true,
-      "effectiveness": 1.7,
+      "effectiveness": 1.53,
       "supply_reach": 0.48,
       "commander": {
         "name": "吉住良辅",
@@ -53,7 +53,7 @@
       "strength": 15,
       "position": 0,
       "estimated": true,
-      "effectiveness": 1.6,
+      "effectiveness": 1.44,
       "supply_reach": 0.46,
       "commander": {
         "name": "本间雅晴",
@@ -75,7 +75,7 @@
       "strength": 12,
       "position": 12,
       "estimated": true,
-      "effectiveness": 1.4,
+      "effectiveness": 1.26,
       "supply_reach": 0.45,
       "commander": {
         "name": "伊东政喜",
@@ -97,7 +97,7 @@
       "strength": 16,
       "position": 3,
       "estimated": true,
-      "effectiveness": 1.4,
+      "effectiveness": 1.26,
       "supply_reach": 0.45,
       "commander": {
         "name": "松浦淳六郎",
@@ -119,7 +119,7 @@
       "strength": 5,
       "position": 0,
       "estimated": true,
-      "effectiveness": 1.5,
+      "effectiveness": 1.35,
       "supply_reach": 0.4,
       "commander": {
         "name": "波田重一",
@@ -417,6 +417,175 @@
         "agenda": "空军要留种子；他愿意支援，但不会把最后几架飞机送进日军的护航圈。"
       },
       "note": "实力悬殊，主要靠侦察；人数口径：一个师约 7-9 千（1938 年国军实编）"
+    },
+    {
+      "id": "cn.d32",
+      "name": "第32军",
+      "side": "cn",
+      "kind": "infantry",
+      "strength": 10,
+      "position": 4,
+      "effectiveness": 1.0,
+      "supply_reach": 0.12,
+      "stance": "defend",
+      "estimated": true,
+      "commander": {
+        "name": "32长",
+        "obedience": 0.75,
+        "initiative": 0.45,
+        "aggression": 0.4,
+        "caution": 0.7,
+        "title": "师长"
+      },
+      "note": "为 10 公里粒度的连续正面补的守备兵力（历史口径：南浔正面二十余师）"
+    },
+    {
+      "id": "cn.d8b",
+      "name": "第8军一部",
+      "side": "cn",
+      "kind": "infantry",
+      "strength": 9,
+      "position": 18,
+      "effectiveness": 1.0,
+      "supply_reach": 0.12,
+      "stance": "defend",
+      "estimated": true,
+      "commander": {
+        "name": "8长",
+        "obedience": 0.75,
+        "initiative": 0.45,
+        "aggression": 0.4,
+        "caution": 0.7,
+        "title": "师长"
+      },
+      "note": "为 10 公里粒度的连续正面补的守备兵力（历史口径：南浔正面二十余师）"
+    },
+    {
+      "id": "cn.d70b",
+      "name": "第70军一部",
+      "side": "cn",
+      "kind": "infantry",
+      "strength": 8,
+      "position": 5,
+      "effectiveness": 1.0,
+      "supply_reach": 0.12,
+      "stance": "defend",
+      "estimated": true,
+      "commander": {
+        "name": "70长",
+        "obedience": 0.75,
+        "initiative": 0.45,
+        "aggression": 0.4,
+        "caution": 0.7,
+        "title": "师长"
+      },
+      "note": "为 10 公里粒度的连续正面补的守备兵力（历史口径：南浔正面二十余师）"
+    },
+    {
+      "id": "cn.d139",
+      "name": "第139师",
+      "side": "cn",
+      "kind": "infantry",
+      "strength": 9,
+      "position": 58,
+      "effectiveness": 1.0,
+      "supply_reach": 0.12,
+      "stance": "defend",
+      "estimated": true,
+      "commander": {
+        "name": "139长",
+        "obedience": 0.75,
+        "initiative": 0.45,
+        "aggression": 0.4,
+        "caution": 0.7,
+        "title": "师长"
+      },
+      "note": "为 10 公里粒度的连续正面补的守备兵力（历史口径：南浔正面二十余师）"
+    },
+    {
+      "id": "cn.d15",
+      "name": "第15师",
+      "side": "cn",
+      "kind": "infantry",
+      "strength": 8,
+      "position": 56,
+      "effectiveness": 1.0,
+      "supply_reach": 0.12,
+      "stance": "defend",
+      "estimated": true,
+      "commander": {
+        "name": "15长",
+        "obedience": 0.75,
+        "initiative": 0.45,
+        "aggression": 0.4,
+        "caution": 0.7,
+        "title": "师长"
+      },
+      "note": "为 10 公里粒度的连续正面补的守备兵力（历史口径：南浔正面二十余师）"
+    },
+    {
+      "id": "cn.d19",
+      "name": "第19师",
+      "side": "cn",
+      "kind": "infantry",
+      "strength": 8,
+      "position": 57,
+      "effectiveness": 1.0,
+      "supply_reach": 0.12,
+      "stance": "defend",
+      "estimated": true,
+      "commander": {
+        "name": "19长",
+        "obedience": 0.75,
+        "initiative": 0.45,
+        "aggression": 0.4,
+        "caution": 0.7,
+        "title": "师长"
+      },
+      "note": "为 10 公里粒度的连续正面补的守备兵力（历史口径：南浔正面二十余师）"
+    },
+    {
+      "id": "cn.d51",
+      "name": "第51师",
+      "side": "cn",
+      "kind": "infantry",
+      "strength": 9,
+      "position": 59,
+      "effectiveness": 1.0,
+      "supply_reach": 0.12,
+      "stance": "defend",
+      "estimated": true,
+      "commander": {
+        "name": "51长",
+        "obedience": 0.75,
+        "initiative": 0.45,
+        "aggression": 0.4,
+        "caution": 0.7,
+        "title": "师长"
+      },
+      "note": "为 10 公里粒度的连续正面补的守备兵力（历史口径：南浔正面二十余师）",
+      "arrives_on": 24
+    },
+    {
+      "id": "cn.nd",
+      "name": "南昌守备旅",
+      "side": "cn",
+      "kind": "infantry",
+      "strength": 7,
+      "position": 7,
+      "effectiveness": 1.0,
+      "supply_reach": 0.12,
+      "stance": "defend",
+      "estimated": true,
+      "commander": {
+        "name": "南昌长",
+        "obedience": 0.75,
+        "initiative": 0.45,
+        "aggression": 0.4,
+        "caution": 0.7,
+        "title": "师长"
+      },
+      "note": "为 10 公里粒度的连续正面补的守备兵力（历史口径：南浔正面二十余师）"
     }
   ]
 }
