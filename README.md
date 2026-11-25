@@ -1,10 +1,11 @@
 # 南浔线 1938 · 一个 Iron Mind 战役模块
 
 > 1938 年 7–10 月，长江南岸。日军要打通南浔铁路，国军要在德安、万家岭一线把它拖住。
-> 你是第九战区的长官：只能发电报，具体怎么打是下面那些军长师长的事。
+> 你可以当第九战区的长官（只能发电报，具体怎么打是下面那些军长师长的事），
+> 也可以反过来当第11军的司令官——同一份数据，换个立场就是另一场仗。
 
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![engine](https://img.shields.io/badge/engine-%E2%89%A5%200.12-2f6f4f)
+![engine](https://img.shields.io/badge/engine-%E2%89%A5%201.1-2f6f4f)
 
 这是一个**内容模块**，不是引擎。引擎在 [iron-mind](https://github.com/Vladivostok1017/iron-mind)，
 它只提供框架（tick、实体、补给、战斗、指挥链、LLM 将领），
@@ -14,7 +15,7 @@
 
 | 仓库 | 负责 | 不该出现的东西 |
 |---|---|---|
-| [iron-mind](https://github.com/Vladivostok1017/iron-mind) | Kernel / Systems / Rules / 服务端 / 前端 | 任何"1938 年""日本""中国"的硬编码 |
+| [iron-mind](https://github.com/Vladivostok1017/iron-mind) | Kernel / Systems / Rules / 服务端 / 前端 | 任何"1938 年""日本""中国"的硬编码，以及**任何阵营名**（引擎只知道 A/B 两方） |
 | [iron-mind-sdk](https://github.com/Vladivostok1017/iron-mind-sdk) | 模块脚手架、开发循环、将来的可视化编辑器 | 任何引擎逻辑 |
 | **nanxun-1938**（本仓库） | 地图、序列、将领、规则、结局、战役文档 | 任何引擎逻辑 |
 
@@ -40,7 +41,7 @@
 
 ### 只想玩
 
-去 [Releases](https://github.com/Vladivostok1017/nanxun-1938/releases) 下 `nanxun_1938-v0.1.0.imod`，
+去 [Releases](https://github.com/Vladivostok1017/nanxun-1938/releases) 下 `nanxun_1938-v0.3.0.imod`，
 在游戏里「新的战役 → 导入 .imod」选它就行。（`.imod` 是一个 zip：里面是本目录那五个 json。）
 
 ### 想改它 / 调试它
@@ -66,7 +67,7 @@ cargo run -p sim-server -- --module ../nanxun-1938/nanxun_1938.imod
 
 ```
 nanxun_1938.imod/
-  module.json         元信息：名字、可玩方、尺度、敌方统帅部（岡村寧次）
+  module.json         元信息：名字、两方阵营（`sides`）、尺度、两方的统帅部（薛岳 / 岡村寧次）
   map.json            87 个省：真实经纬度、地形（DEM 实测）、铁路、邻接
   provinces_geo.json  真实县界多边形（DataV），前端据此画地图
   oob.json            26 个部队：番号、兵力、将领性格、编制、上级
@@ -98,8 +99,13 @@ docs/
   AWS Terrain Tiles 的 DEM 采样判定，33 个省改过判。
 - **地势与原稿的差异**：真实县界取自 DataV（现代县界，作为 1938 年的近似），
   1938 年的县界数据不可得。
-- **敌方统帅部**：`module.json` 里的 `hq` 是岡村寧次（第11军司令官），
-  他每隔几天开一次会、给自己的师团下电报，师团长可以抗命。
+- **两边都能玩**（`sides` + `playable_sides`）：首页那张卡上有两个按钮——
+  「作为第九战区」（守）和「作为第11军」（攻）。你选哪边，另一边就由 AI 统帅部
+  照史实打法推进。同一个引擎、同一份数据，换个立场就是另一场仗。
+- **两个统帅部**：`sides[0].hq` = 薛岳（第九战区第一兵团总司令，把日军放进来再围歼），
+  `sides[1].hq` = 岡村寧次（第11军司令官，先集中一点再扩张战果，怕师团被各个击破）。
+  他们每隔几天开一次会、给自己的部队下电报，师团长可以抗命。
+  顶层的 `hq` 仍然保留（老引擎只看那一个）。
 
 ## 数据可信度
 
